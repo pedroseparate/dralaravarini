@@ -201,19 +201,22 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .nav-links{display:none}
   .hamburger{display:flex}
   .hero-photo::after{background:linear-gradient(to right,var(--cream) 0%,var(--cream) 22%,rgba(247,242,234,.95) 42%,rgba(247,242,234,.6) 62%,rgba(247,242,234,.15) 100%),linear-gradient(to top,rgba(42,32,26,.5) 0%,transparent 50%)}
-  .hero-photo img{object-position:65% 15%}
+  .hero-photo img{object-position:85% 15%}
   .hero-content{max-width:100%;padding:0 5vw 5rem}
   .hero{height:auto;min-height:100vh}
   .hero-photo{height:100%}
   .sobre,.agendar{grid-template-columns:1fr}
   .sobre-img{height:55vw;min-height:240px}
-  .formacao{grid-template-columns:55fr 45fr;min-height:auto}
-  .form-content{order:1;padding:3rem 3vw 3rem 4vw}
-  .form-content h2{font-size:1.4rem}
-  .form-content .form-text{font-size:13px}
+  .formacao{grid-template-columns:1fr 1fr;min-height:auto}
+  .form-content{order:1;padding:2.5rem 3vw 2.5rem 4vw}
+  .form-content h2{font-size:1.3rem}
+  .form-content .form-text{font-size:12px;line-height:1.75}
+  .cred-card{padding:.8rem 1rem;gap:.8rem}
+  .cred-card-icon{width:28px;height:28px;flex-shrink:0}
+  .cred-card-icon svg{width:12px;height:12px}
   .cred-card-body strong{font-size:11px}
-  .cred-card-body span{font-size:11px}
-  .form-img{order:2;min-height:480px}
+  .cred-card-body span{font-size:10px}
+  .form-img{order:2;min-height:400px}
   .form-img img{object-position:center 20%}
   .form-img::after{background:linear-gradient(to left,var(--warm) 0%,rgba(239,231,217,.3) 15%,rgba(239,231,217,0) 40%),linear-gradient(to top,rgba(42,32,26,.35) 0%,transparent 40%)}
   .serv-header{grid-template-columns:1fr;gap:1rem}
@@ -224,11 +227,13 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .servicos,.blog,.agendar,.telec{padding:5rem 5vw}
 }
 @media(max-width:500px){
-  .formacao{grid-template-columns:1fr}
-  .form-img{min-height:260px;height:70vw}
-  .form-img img{object-position:center 25%}
-  .form-img::after{background:linear-gradient(to top,var(--warm) 0%,rgba(239,231,217,.3) 18%,rgba(239,231,217,0) 45%)}
-  .form-content{padding:3rem 5vw}
+  .formacao{grid-template-columns:1fr 1fr}
+  .form-img{min-height:320px}
+  .form-img img{object-position:center 20%}
+  .form-content{padding:2rem 3vw 2rem 4vw}
+  .form-content h2{font-size:1.15rem}
+  .section-tag{font-size:9px}
+  .cred-cards{gap:.4rem;margin-top:1rem}
 }
 @media(max-width:600px){
   .serv-grid{grid-template-columns:1fr}
