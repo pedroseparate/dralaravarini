@@ -200,7 +200,9 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
 @media(max-width:960px){
   .nav-links{display:none}
   .hamburger{display:flex}
-  .hero-photo::after{background:linear-gradient(to right,var(--cream) 0%,var(--cream) 10%,rgba(247,242,234,.9) 35%,rgba(247,242,234,.4) 60%,rgba(247,242,234,.1) 100%),linear-gradient(to top,rgba(42,32,26,.5) 0%,transparent 50%)}
+  /* Hero: gradiente mais forte à esquerda + foto deslocada para a direita */
+  .hero-photo::after{background:linear-gradient(to right,var(--cream) 0%,var(--cream) 22%,rgba(247,242,234,.95) 42%,rgba(247,242,234,.6) 62%,rgba(247,242,234,.15) 100%),linear-gradient(to top,rgba(42,32,26,.5) 0%,transparent 50%)}
+  .hero-photo img{object-position:85% 15%}
   .hero-content{max-width:100%;padding:0 5vw 5rem}
   .hero{height:auto;min-height:100vh}
   .hero-photo{height:100%}
@@ -208,8 +210,10 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .sobre-img{height:55vw;min-height:240px}
   .formacao{grid-template-columns:1fr}
   .form-content{order:1;padding:4rem 5vw}
-  .form-img{order:2;height:60vw;min-height:260px}
-  .form-img::after{background:linear-gradient(to top,var(--warm) 0%,rgba(239,231,217,.4) 20%,rgba(239,231,217,0) 50%)}
+  /* Diploma: altura maior + foco no centro da foto */
+  .form-img{order:2;height:75vw;min-height:320px}
+  .form-img img{object-position:center 30%}
+  .form-img::after{background:linear-gradient(to top,var(--warm) 0%,rgba(239,231,217,.3) 18%,rgba(239,231,217,0) 45%)}
   .serv-header{grid-template-columns:1fr;gap:1rem}
   .serv-sub{padding-top:0}
   .serv-grid{grid-template-columns:1fr 1fr}
