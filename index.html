@@ -213,7 +213,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .nav-links{display:none}
   .hamburger{display:flex}
 
-  /* HERO */
+  /* HERO — mantém overlay (funciona bem) */
   .hero{height:100svh;min-height:600px}
   .hero-photo{position:absolute;inset:0;top:64px}
   .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:72% 12%}
@@ -226,35 +226,35 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .hero-desc{font-size:14px;max-width:100%;margin-bottom:1.75rem}
   .btn-ghost{margin-left:0;margin-top:.6rem;display:block;text-align:center}
 
-  /* SOBRE — foto dominante, texto overlay */
-  .sobre{display:block;position:relative;overflow:hidden;min-height:auto}
-  .sobre-img{position:relative;width:100%;aspect-ratio:4/3;display:block;overflow:hidden}
+  /* SOBRE — fluxo normal: foto cima, texto baixo */
+  .sobre{display:block;min-height:auto}
+  .sobre-img{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;display:block}
   .sobre-img img{width:100%;height:100%;object-fit:cover;object-position:89% 12%;display:block}
-  .sobre-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(42,32,26,.88) 0%,rgba(42,32,26,.4) 42%,transparent 72%)}
-  .sobre-content{position:absolute;bottom:0;left:0;right:0;padding:2rem 6vw 2.5rem;background:none;z-index:2}
-  .sobre-content .section-tag{color:rgba(183,161,134,.8)}
-  .sobre-content h2{color:var(--cream);font-size:clamp(1.5rem,6.5vw,2.1rem);margin-bottom:.6rem}
-  .sobre-content h2 em{color:var(--sand)}
-  .sobre-text{color:rgba(247,242,234,.65);font-size:12.5px;line-height:1.8;margin-bottom:.6rem}
-  .sobre-text strong{color:var(--cream)!important}
+  .sobre-img::after{display:none}
+  .sobre-content{position:static;padding:2rem 6vw;background:var(--cream)}
+  .sobre-content .section-tag{color:var(--sand)}
+  .sobre-content h2{color:var(--dark);font-size:clamp(1.6rem,6.5vw,2.1rem);margin-bottom:.75rem}
+  .sobre-content h2 em{color:var(--sand2)}
+  .sobre-text{color:var(--mid);font-size:13px;line-height:1.85;margin-bottom:.75rem}
+  .sobre-text strong{color:var(--dark)!important}
 
-  /* FORMAÇÃO — foto dominante, texto overlay */
-  .formacao{display:block;position:relative;overflow:hidden;min-height:auto;background:var(--dark)}
-  .form-img{position:relative;width:100%;aspect-ratio:4/3;display:block;overflow:hidden;order:1}
+  /* FORMAÇÃO — fluxo normal: foto cima, texto baixo */
+  .formacao{display:block;min-height:auto;background:var(--dark)}
+  .form-img{position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;display:block;order:1}
   .form-img img{width:100%;height:100%;object-fit:cover;object-position:100% 44%;display:block}
-  .form-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(42,32,26,.95) 0%,rgba(42,32,26,.55) 38%,transparent 70%);z-index:1}
-  .form-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 6vw 2rem;order:2;background:none;justify-content:flex-end;z-index:2}
+  .form-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(42,32,26,.7) 100%);z-index:1}
+  .form-content{position:static;padding:2rem 6vw 2.5rem;order:2;background:var(--dark)}
   .form-content .section-tag{color:rgba(183,161,134,.8)}
-  .form-content h2{color:var(--cream);font-size:clamp(1.3rem,5.5vw,1.8rem);margin-bottom:.6rem}
+  .form-content h2{color:var(--cream);font-size:clamp(1.4rem,6vw,1.9rem);margin-bottom:.75rem}
   .form-content h2 em{color:var(--sand)}
-  .form-text{color:rgba(247,242,234,.55);font-size:11.5px;line-height:1.75;margin-bottom:.6rem}
+  .form-text{color:rgba(247,242,234,.6);font-size:13px;line-height:1.85;margin-bottom:.75rem}
   .form-text strong{color:var(--cream)!important}
-  .cred-cards{gap:.3rem;margin-top:.6rem}
-  .cred-card{background:rgba(247,242,234,.06);border-color:rgba(183,161,134,.18);padding:.6rem .8rem;gap:.6rem}
-  .cred-card-icon{width:24px;height:24px;border-color:rgba(183,161,134,.25);flex-shrink:0}
-  .cred-card-icon svg{width:10px;height:10px}
-  .cred-card-body strong{font-size:10.5px;color:var(--cream)}
-  .cred-card-body span{font-size:10px;color:rgba(247,242,234,.45)}
+  .cred-cards{gap:.4rem;margin-top:.75rem}
+  .cred-card{background:rgba(247,242,234,.06);border-color:rgba(183,161,134,.18);padding:.75rem 1rem;gap:.75rem}
+  .cred-card-icon{width:28px;height:28px;border-color:rgba(183,161,134,.25);flex-shrink:0}
+  .cred-card-icon svg{width:12px;height:12px}
+  .cred-card-body strong{font-size:11.5px;color:var(--cream)}
+  .cred-card-body span{font-size:11px;color:rgba(247,242,234,.45)}
 
   /* TELECONSULTA */
   .telec{padding:4rem 6vw}
@@ -284,6 +284,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .tipo-wrap{grid-template-columns:1fr}
   h2{font-size:clamp(1.5rem,7vw,2rem)}
 }
+
 </style>
 <script type="application/ld+json">
 {
