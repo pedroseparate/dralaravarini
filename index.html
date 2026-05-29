@@ -227,33 +227,33 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   .btn-ghost{margin-left:0;margin-top:.6rem;display:block;text-align:center}
 
   /* SOBRE — foto dominante, texto overlay */
-  .sobre{display:block;position:relative;min-height:auto}
-  .sobre-img{position:relative;width:100%;height:90vw;max-height:520px;display:block}
-  .sobre-img img{width:100%;height:100%;object-fit:cover;object-position:center 8%}
+  .sobre{display:block;position:relative;overflow:hidden;min-height:auto}
+  .sobre-img{position:relative;width:100%;height:90vw;max-height:520px;display:block;overflow:hidden}
+  .sobre-img img{width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block}
   .sobre-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(42,32,26,.88) 0%,rgba(42,32,26,.4) 42%,transparent 72%)}
-  .sobre-content{position:absolute;bottom:0;left:0;right:0;padding:2rem 6vw 2.5rem;background:none}
+  .sobre-content{position:absolute;bottom:0;left:0;right:0;padding:2rem 6vw 2.5rem;background:none;z-index:2}
   .sobre-content .section-tag{color:rgba(183,161,134,.8)}
-  .sobre-content h2{color:var(--cream);font-size:clamp(1.6rem,7vw,2.2rem);margin-bottom:.75rem}
+  .sobre-content h2{color:var(--cream);font-size:clamp(1.5rem,6.5vw,2.1rem);margin-bottom:.6rem}
   .sobre-content h2 em{color:var(--sand)}
-  .sobre-text{color:rgba(247,242,234,.65);font-size:13px;line-height:1.85;margin-bottom:.75rem}
+  .sobre-text{color:rgba(247,242,234,.65);font-size:12.5px;line-height:1.8;margin-bottom:.6rem}
   .sobre-text strong{color:var(--cream)!important}
 
   /* FORMAÇÃO — foto dominante, texto overlay */
-  .formacao{display:block;position:relative;min-height:auto;background:var(--dark)}
-  .form-img{position:relative;width:100%;height:85vw;max-height:480px;order:1}
-  .form-img img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
-  .form-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(42,32,26,.95) 0%,rgba(42,32,26,.55) 38%,transparent 70%)}
-  .form-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 6vw 2.5rem;order:2;background:none;justify-content:flex-end}
+  .formacao{display:block;position:relative;overflow:hidden;min-height:auto;background:var(--dark)}
+  .form-img{position:relative;width:100%;height:85vw;max-height:480px;display:block;overflow:hidden;order:1}
+  .form-img img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
+  .form-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(42,32,26,.95) 0%,rgba(42,32,26,.55) 38%,transparent 70%);z-index:1}
+  .form-content{position:absolute;bottom:0;left:0;right:0;padding:1.5rem 6vw 2rem;order:2;background:none;justify-content:flex-end;z-index:2}
   .form-content .section-tag{color:rgba(183,161,134,.8)}
-  .form-content h2{color:var(--cream);font-size:clamp(1.4rem,6vw,1.9rem);margin-bottom:.75rem}
+  .form-content h2{color:var(--cream);font-size:clamp(1.3rem,5.5vw,1.8rem);margin-bottom:.6rem}
   .form-content h2 em{color:var(--sand)}
-  .form-text{color:rgba(247,242,234,.55);font-size:12px;line-height:1.8;margin-bottom:.75rem}
+  .form-text{color:rgba(247,242,234,.55);font-size:11.5px;line-height:1.75;margin-bottom:.6rem}
   .form-text strong{color:var(--cream)!important}
-  .cred-cards{gap:.35rem;margin-top:.75rem}
-  .cred-card{background:rgba(247,242,234,.06);border-color:rgba(183,161,134,.18);padding:.7rem .9rem;gap:.7rem}
-  .cred-card-icon{width:26px;height:26px;border-color:rgba(183,161,134,.25);flex-shrink:0}
-  .cred-card-icon svg{width:11px;height:11px}
-  .cred-card-body strong{font-size:11px;color:var(--cream)}
+  .cred-cards{gap:.3rem;margin-top:.6rem}
+  .cred-card{background:rgba(247,242,234,.06);border-color:rgba(183,161,134,.18);padding:.6rem .8rem;gap:.6rem}
+  .cred-card-icon{width:24px;height:24px;border-color:rgba(183,161,134,.25);flex-shrink:0}
+  .cred-card-icon svg{width:10px;height:10px}
+  .cred-card-body strong{font-size:10.5px;color:var(--cream)}
   .cred-card-body span{font-size:10px;color:rgba(247,242,234,.45)}
 
   /* TELECONSULTA */
