@@ -114,9 +114,9 @@ h2 em{font-style:italic;color:var(--sand2)}
 
 /* SERVIÇOS */
 .servicos{padding:7rem 8vw;background:var(--cream)}
-.serv-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:4rem}
-.serv-header-left{}
-.serv-sub{color:var(--mid);font-size:15px;line-height:1.9;padding-top:.25rem}
+.serv-header{display:grid;grid-template-columns:auto 1fr;gap:3rem;align-items:center;margin-bottom:1.5rem}
+.serv-header-left{white-space:nowrap}
+.serv-sub{color:var(--mid);font-size:15px;line-height:1.9}
 .serv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
 .serv-item{background:var(--cream);padding:2.5rem 2rem;transition:background .2s}
 .serv-item:hover{background:var(--warm)}
@@ -285,6 +285,17 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   h2{font-size:clamp(1.5rem,7vw,2rem)}
 }
 
+
+/* ── CALENDAR ── */
+.cal-slot{display:inline-block;padding:9px 18px;border:1px solid var(--border2);border-radius:2px;font-size:12px;letter-spacing:.08em;color:var(--mid);cursor:pointer;background:var(--cream);transition:all .2s;font-family:'Jost',sans-serif;font-weight:300;margin:0;line-height:1;-webkit-appearance:none;appearance:none}
+.cal-slot:hover{border-color:var(--sand);color:var(--dark)}
+.cal-slot.selected{background:var(--dark)!important;color:var(--cream)!important;border-color:var(--dark)!important}
+.cal-day-block{margin-bottom:1.1rem}
+.cal-day-block:last-child{margin-bottom:0}
+.cal-day-label{font-size:12px;color:var(--mid);margin-bottom:.5rem;display:flex;align-items:baseline;gap:.3rem}
+.cal-day-label strong{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);font-weight:400}
+.cal-day-label em{color:var(--sand);font-style:normal}
+.cal-slots-row{display:flex;gap:.4rem;flex-wrap:wrap}
 </style>
 <script type="application/ld+json">
 {
@@ -360,7 +371,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
     <p class="hero-desc">Cuidado especializado com escuta atenta — presencialmente em Santos ou onde você estiver, por teleconsulta.</p>
     <div style="display:flex;gap:.75rem;flex-wrap:wrap">
       <a href="#agendar" class="btn btn-dark">Agendar consulta</a>
-      <a href="#teleconsulta" class="btn btn-ghost" style="margin-left:0">Sobre a teleconsulta</a>
+      <a href="https://wa.me/5513998009900?text=Ol%C3%A1%2C%20Dra.%20Lara%21%20Gostaria%20de%20agendar%20uma%20teleconsulta." target="_blank" class="btn btn-ghost" style="margin-left:0">Agendar teleconsulta</a>
     </div>
   </div>
 </section>
@@ -422,7 +433,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
     <div class="section-tag">Atendimento remoto</div>
     <h2>A precisão de um diagnóstico<br>profissional —<br><em>na segurança do seu lar</em></h2>
     <p>Telemedicina regulamentada pelo CFM. A mesma qualidade e rigor técnico do atendimento presencial, sem deslocamento. Indicada para consultas de rotina, acompanhamentos, segunda opinião e dúvidas sobre exames.</p>
-    <a href="#agendar" class="btn btn-sand">Agendar teleconsulta</a>
+    <a href="https://wa.me/5513998009900?text=Ol%C3%A1%2C%20Dra.%20Lara%21%20Gostaria%20de%20agendar%20uma%20teleconsulta." target="_blank" class="btn btn-sand">Agendar teleconsulta</a>
     <p class="telec-note">Res. CFM 2.314/2022 · Segura e regulamentada</p>
   </div>
 
@@ -514,7 +525,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
       </div>
       <div class="ag-info">
         <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.29h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <div class="ag-info-t"><strong>Telefone &amp; WhatsApp</strong><span>(13) 2191-5581 · (11) 93305-8210</span></div>
+        <div class="ag-info-t"><strong>WhatsApp</strong><span><a href="https://wa.me/5513998009900?text=Ol%C3%A1%2C%20Dra.%20Lara%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" style="color:var(--mid);text-decoration:none">(13) 99800-9900</a></span></div>
       </div>
       <div class="ag-info">
         <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -527,41 +538,42 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
   </div>
 
   <div>
-    <div class="ag-form" id="agForm">
-      <h3 class="form-title">Solicitar agendamento</h3>
-      <p class="form-sub">Escolha o tipo de consulta para continuar.</p>
-      <div class="fg">
-        <label>Tipo de consulta</label>
-        <div class="tipo-wrap">
-          <div class="tipo-opt"><input type="radio" name="tipo" id="tTele" value="teleconsulta" checked onchange="handleTipo()"><label for="tTele"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Teleconsulta</label></div>
-          <div class="tipo-opt"><input type="radio" name="tipo" id="tPres" value="presencial" onchange="handleTipo()"><label for="tPres"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Presencial</label></div>
+    <div class="ag-form" style="padding:0;overflow:hidden">
+
+      <!-- TIPO -->
+      <div style="padding:1.5rem 1.75rem 0">
+        <span style="font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:var(--light);margin-bottom:.75rem;display:block">Tipo de consulta</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
+          <div class="tipo-opt">
+            <input type="radio" name="calTipoR" id="ctTele" value="Teleconsulta" checked onchange="calUpdate()">
+            <label for="ctTele"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Teleconsulta</label>
+          </div>
+          <div class="tipo-opt">
+            <input type="radio" name="calTipoR" id="ctPres" value="Presencial" onchange="calUpdate()">
+            <label for="ctPres"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Presencial</label>
+          </div>
         </div>
+        <div style="height:1px;background:var(--border);margin-top:1.25rem"></div>
       </div>
 
-      <!-- PAINEL TELECONSULTA -->
-      <div class="panel active" id="panelTele">
-        <div class="fg"><label for="nome">Nome completo</label><input type="text" id="nome" placeholder="Seu nome"></div>
-        <div class="fg"><label for="tel">WhatsApp</label><input type="tel" id="tel" placeholder="(00) 00000-0000"></div>
-        <div class="fg"><label for="email">E-mail</label><input type="email" id="email" placeholder="seu@email.com"></div>
-        <div class="fg"><label for="motivo">Motivo da consulta (opcional)</label><textarea id="motivo" placeholder="Descreva brevemente o motivo ou dúvidas..."></textarea></div>
-        <button class="form-btn" onclick="submitTele()">Solicitar teleconsulta</button>
-      </div>
+      <!-- SLOTS -->
+      <div id="calSlots" style="padding:1.25rem 1.75rem 1.5rem"></div>
 
-      <!-- PAINEL PRESENCIAL -->
-      <div class="panel" id="panelPres">
-        <p class="wa-hint">O agendamento presencial é realizado diretamente pelo WhatsApp. Clique abaixo para iniciar a conversa.</p>
-        <a href="https://wa.me/5511933058210?text=Ol%C3%A1%2C+Dra.+Lara%21+Gostaria+de+agendar+uma+consulta+presencial." target="_blank" class="wa-btn">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-          Agendar pelo WhatsApp
-        </a>
-        <p class="wa-hint" style="font-size:11px;color:var(--light)">(11) 93305-8210 · Ter · Qui · Sex</p>
-      </div>
-    </div>
-
-    <div class="form-ok" id="formOk">
-      <div class="form-ok-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h3>Solicitação recebida</h3>
-      <p>Entraremos em contato em até 24h para confirmar sua data e horário.</p>
+      <!-- FORM -->
+      <div id="calForm" style="display:none;border-top:1px solid var(--border)">
+        <div style="padding:1.5rem 1.75rem;background:var(--cream)">
+          <p id="calFormTitle" style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--dark);font-weight:400;margin-bottom:1.25rem;padding-bottom:1rem;border-bottom:1px solid var(--border)"></p>
+          <div class="fg"><label for="cfNome">Nome completo</label><input type="text" id="cfNome" placeholder="Seu nome"></div>
+          <div class="fg"><label for="cfTel">WhatsApp</label><input type="tel" id="cfTel" placeholder="(00) 00000-0000"></div>
+          <div class="fg"><label for="cfEmail">E-mail</label><input type="email" id="cfEmail" placeholder="seu@email.com"></div>
+          <div class="fg"><label for="cfMotivo">Motivo (opcional)</label><textarea id="cfMotivo" rows="2" placeholder="Descreva brevemente..."></textarea></div>
+          <button class="wa-btn" onclick="calSend()" style="margin-top:.5rem">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            Confirmar pelo WhatsApp
+          </button>
+          <button onclick="calReset()" style="width:100%;margin-top:.5rem;padding:8px;background:none;border:none;font-size:11px;color:var(--light);cursor:pointer;letter-spacing:.08em;font-family:'Jost',sans-serif">← Escolher outro horário</button>
+        </div>
+      </div>>
     </div>
   </div>
 </section>
@@ -594,8 +606,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
       <ul>
         <li><span>Av. Ana Costa, 228 · 20º</span></li>
         <li><span>Gonzaga · Santos · SP</span></li>
-        <li><a href="tel:+551321915581">(13) 2191-5581</a></li>
-        <li><a href="https://wa.me/5511933058210">WhatsApp</a></li>
+        <li><a href="https://wa.me/5513998009900?text=Ol%C3%A1%2C%20Dra.%20Lara%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank">WhatsApp (13) 99800-9900</a></li>
         <li><span>Ter · Qui · Sex</span></li>
       </ul>
     </div>
@@ -607,7 +618,7 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
 </footer>
 
 <div class="float" id="floatBtn">
-  <a href="#agendar">
+  <a href="https://wa.me/5513998009900?text=Ol%C3%A1%2C%20Dra.%20Lara%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank">
     <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     Agendar consulta
   </a>
@@ -617,27 +628,104 @@ footer{background:var(--dark);padding:4rem 8vw 2rem}
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 window.addEventListener('scroll',()=>{document.getElementById('floatBtn').classList.toggle('show',window.scrollY>window.innerHeight*.5)})
-
-function handleTipo(){
-  const t=document.querySelector('input[name=tipo]:checked').value
-  document.getElementById('panelTele').classList.toggle('active',t==='teleconsulta')
-  document.getElementById('panelPres').classList.toggle('active',t==='presencial')
-}
-
-function submitTele(){
-  const nome=document.getElementById('nome').value.trim()
-  const tel=document.getElementById('tel').value.trim()
-  if(!nome||!tel){alert('Por favor, preencha o nome e o WhatsApp.');return}
-  document.getElementById('agForm').style.display='none'
-  document.getElementById('formOk').classList.add('show')
-}
-
 function toggleFaq(btn){
-  const item=btn.closest('.faq-item')
-  const isOpen=item.classList.contains('open')
+  var item=btn.closest('.faq-item')
+  var isOpen=item.classList.contains('open')
   document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'))
   if(!isOpen) item.classList.add('open')
 }
+</script>
+
+<script>
+var CAL_SCHEDULE=[
+  {dow:2,times:['18:30','19:20']},
+  {dow:4,times:['18:00','18:50','19:40','20:30']},
+  {dow:5,times:['18:30','19:20']}
+];
+var CAL_DOW=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+var CAL_MONTHS=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+var calSelected=null;
+
+function getCalSlots(){
+  var slots=[];
+  var today=new Date(); today.setHours(0,0,0,0);
+  for(var d=0;d<21;d++){
+    var dt=new Date(today); dt.setDate(today.getDate()+d);
+    for(var i=0;i<CAL_SCHEDULE.length;i++){
+      if(CAL_SCHEDULE[i].dow===dt.getDay()){
+        slots.push({date:new Date(dt),times:CAL_SCHEDULE[i].times});
+        break;
+      }
+    }
+    if(slots.length>=5) break;
+  }
+  return slots;
+}
+
+function calUpdate(){
+  var el=document.querySelector('input[name=calTipoR]:checked');
+  if(!el) return;
+  var tipo=el.value;
+  var slots=getCalSlots();
+  var html='';
+  for(var i=0;i<slots.length;i++){
+    var date=slots[i].date;
+    var times=slots[i].times;
+    var d=date.getDate();
+    var m=CAL_MONTHS[date.getMonth()];
+    var ds=(d<10?'0':'')+d+'/'+((date.getMonth()+1)<10?'0':'')+(date.getMonth()+1);
+    var dayName=CAL_DOW[date.getDay()];
+    html+='<div class="cal-day-block">';
+    html+='<div class="cal-day-label"><strong>'+dayName+',</strong>&nbsp;<em>'+d+' de '+m+'</em></div>';
+    html+='<div class="cal-slots-row">';
+    for(var j=0;j<times.length;j++){
+      var t=times[j];
+      html+='<button class="cal-slot" onclick="calSelect(this,\''+ds+'\',\''+t+'\',\''+dayName+'\',\''+tipo+'\')">'+t+'</button>';
+    }
+    html+='</div></div>';
+  }
+  var slotsEl=document.getElementById('calSlots');
+  if(slotsEl) slotsEl.innerHTML=html;
+  var formEl=document.getElementById('calForm');
+  if(formEl) formEl.style.display='none';
+  calSelected=null;
+}
+
+function calSelect(el,date,time,dayName,tipo){
+  var btns=document.querySelectorAll('.cal-slot');
+  for(var i=0;i<btns.length;i++) btns[i].classList.remove('selected');
+  el.classList.add('selected');
+  calSelected={date:date,time:time,dayName:dayName,tipo:tipo};
+  var title=document.getElementById('calFormTitle');
+  if(title) title.textContent=tipo+' · '+dayName+', '+date+' às '+time;
+  var form=document.getElementById('calForm');
+  if(form){ form.style.display='block'; setTimeout(function(){form.scrollIntoView({behavior:'smooth',block:'nearest'})},50); }
+}
+
+function calSend(){
+  var nome=document.getElementById('cfNome').value.trim();
+  var tel=document.getElementById('cfTel').value.trim();
+  if(!nome||!tel){alert('Por favor, preencha o nome e o WhatsApp.');return;}
+  var email=document.getElementById('cfEmail').value.trim();
+  var motivo=document.getElementById('cfMotivo').value.trim();
+  var msg='Olá, Dra. Lara! Gostaria de agendar uma '+calSelected.tipo+'.\n\n';
+  msg+='📅 Data: '+calSelected.dayName+', '+calSelected.date+' às '+calSelected.time+'\n';
+  msg+='👤 Nome: '+nome+'\n';
+  msg+='📱 WhatsApp: '+tel;
+  if(email) msg+='\n📧 E-mail: '+email;
+  if(motivo) msg+='\n📝 Motivo: '+motivo;
+  window.open('https://wa.me/5513998009900?text='+encodeURIComponent(msg),'_blank');
+}
+
+function calReset(){
+  var btns=document.querySelectorAll('.cal-slot');
+  for(var i=0;i<btns.length;i++) btns[i].classList.remove('selected');
+  var form=document.getElementById('calForm');
+  if(form) form.style.display='none';
+  calSelected=null;
+}
+
+window.addEventListener('load',calUpdate);
 </script>
 </body>
 </html>
